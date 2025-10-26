@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://brixlinedb.cxegsieoqil4.ap-south-1.rds.amazonaws.com:5432/postgres?autoReconnect=true
+    username: brixline_admin
+    password: kou7K0KVkby65sOnFtD0
+    #dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
+    driver-class-name: org.postgresql.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+
+    hikari:
+      maximum-pool-size=5
+      minimum-idle=5
+      idle-timeout=30000
+      connection-timeout=20000
+      max-lifetime=1800000
+      pool-name=PostgresHikariCP
+
+  jpa:
+    hibernate:
+      ddl-auto: none # or none, create, create-drop
+
+    show-sql: false
+
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+app:
+  env: DEV
+
+swagger:
+  isEnabled: true
