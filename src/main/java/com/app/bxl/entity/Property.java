@@ -1,5 +1,6 @@
 package com.app.bxl.entity;
 
+//import com.app.bxl.entity.converter.BHKTypeConverter;
 import com.app.bxl.entity.converter.BHKTypeConverter;
 import com.app.bxl.entity.enums.*;
 import jakarta.persistence.*;
@@ -39,9 +40,6 @@ public class Property implements Serializable {
 	@ColumnTransformer(write = "?::price_unit_type")
 	private PriceUnitTypeEnum absPriceUnitTypeEnum;
 
-	//@Enumerated(EnumType.STRING)
-	//@Column(name="apt_type", columnDefinition = "bhk_type")
-	//@ColumnTransformer(write = "?::bhk_type")
 	@Column(name="apt_type")
 	@Convert(converter = BHKTypeConverter.class)
 	private BHKTypeEnum aptType;

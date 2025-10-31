@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
 
+import java.util.UUID;
 
 
 @Data
@@ -27,6 +28,6 @@ public class InitResponse extends BaseResponse {
 
     @lombok.Data
     public static class Data {
-        private java.util.UUID id;
+        private UUID id;
     }
 }
